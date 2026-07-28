@@ -26,7 +26,7 @@
 <body>
   <!-- navbar start -->
   <nav class="navbar">
-    <a href="#" class="navbar-logo">Kelayu<span>Cofee.</span></a>
+    <a href="#" class="navbar-logo">Kelayu<span>Coffee.</span></a>
 
     <div class="navbar-nav">
       <a href="#home">Home</a>
@@ -50,7 +50,7 @@
     <main class="content">
       <h1>Mari nikmati secangkir<span> Kopi</span></h1>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, velit.</p>
-      <a href="#" class="cta">Beli Sekarang</a>
+      <a href="#menu" class="cta">Beli Sekarang</a>
     </main>
   </section>
   <!-- Hero section end -->
@@ -77,36 +77,18 @@
   <!-- menu section start -->
   <section id="menu" class="menu">
     <h2><span>Menu</span> Kami</h2>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum omnis expedita facilis dicta porro voluptatum.
-    </p>
-    <div class="row">
-      <div class="menu-card">
-        <img src="img/menu/1.jpg" alt="espresso" class="menu-card-img">
-        <h3 class="menu-card-title">- Espresso -</h3>
-        <p class="menu-card-price">IDR 15K</p>
+    <p>Nikmati pilihan kopi dan minuman terbaik kami.</p>
 
-      </div>
-      <div class="menu-card">
-        <img src="img/menu/1.jpg" alt="espresso" class="menu-card-img">
-        <h3 class="menu-card-title">- Espresso -</h3>
-        <p class="menu-card-price">IDR 15K</p>
-
-      </div>
-      <div class="menu-card">
-        <img src="img/menu/1.jpg" alt="espresso" class="menu-card-img">
-        <h3 class="menu-card-title">- Espresso -</h3>
-        <p class="menu-card-price">IDR 15K</p>
-
-      </div>
-      <div class="menu-card">
-        <img src="img/menu/1.jpg" alt="espresso" class="menu-card-img">
-        <h3 class="menu-card-title">- Espresso -</h3>
-        <p class="menu-card-price">IDR 15K</p>
-
-      </div>
-
+    <!-- filter buttons -->
+    <div class="menu-filter">
+      <button class="filter-btn active" data-filter="all">Semua</button>
+      <button class="filter-btn" data-filter="Kopi">Kopi</button>
+      <button class="filter-btn" data-filter="Non-Kopi">Non-Kopi</button>
     </div>
 
+    <div class="row" id="menu-row">
+      <!-- di-render oleh JS -->
+    </div>
   </section>
   <!-- menu section end -->
 
@@ -142,6 +124,80 @@
   </section>
   <!-- contact section end-->
 
+  <!-- shopping cart sidebar start -->
+  <div class="cart-sidebar" id="cart-sidebar">
+    <div class="cart-header">
+      <h3>Keranjang Belanja</h3>
+      <button id="cart-close"><i data-feather="x"></i></button>
+    </div>
+    <div class="cart-items" id="cart-items">
+      <!-- di-render oleh JS -->
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total</span>
+        <span id="cart-total-price">Rp 0</span>
+      </div>
+      <button class="btn" id="checkout-btn">Checkout</button>
+    </div>
+  </div>
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <!-- shopping cart sidebar end -->
+
+  <!-- notification modal start -->
+  <div class="modal" id="notification-modal">
+    <div class="modal-content">
+      <p id="modal-message"></p>
+      <button class="btn" id="modal-ok">OK</button>
+    </div>
+  </div>
+  <!-- notification modal end -->
+
+  <!-- checkout modal start -->
+  <div class="modal" id="checkout-modal">
+    <div class="checkout-modal-content">
+      <div class="checkout-header">
+        <h3>Checkout</h3>
+        <button id="checkout-close"><i data-feather="x"></i></button>
+      </div>
+      <div class="checkout-body">
+        <div class="checkout-left">
+          <h4>Pesanan Kamu</h4>
+          <div id="checkout-order-list" class="checkout-order-list"></div>
+          <div class="checkout-grand-total">
+            <span>Total</span>
+            <span id="checkout-grand-total">Rp 0</span>
+          </div>
+
+          <div class="checkout-form">
+            <div class="input-group">
+              <i data-feather="user"></i>
+              <input type="text" id="cust-name" placeholder="Nama kamu">
+            </div>
+            <div class="input-group">
+              <i data-feather="phone"></i>
+              <input type="text" id="cust-phone" placeholder="No. HP (WhatsApp)">
+            </div>
+            <div class="input-group">
+              <i data-feather="edit-3"></i>
+              <input type="text" id="cust-notes" placeholder="Catatan (opsional)">
+            </div>
+          </div>
+        </div>
+        <div class="checkout-right">
+          <h4>Scan QRIS</h4>
+          <img id="checkout-qr" src="img/qris.jpg" alt="QRIS Pembayaran" class="checkout-qr-img">
+          <p class="checkout-qr-hint">Scan QR di atas pakai GoPay / OVO / mobile banking</p>
+          <p class="checkout-qr-hint">Transfer sesuai total pesanan, lalu klik tombol di bawah</p>
+          <button class="btn" id="wa-send-btn">
+            <i data-feather="send"></i> Konfirmasi via WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- checkout modal end -->
+
   <!-- footer start -->
   <footer>
     <div class="sosial">
@@ -162,13 +218,15 @@
   <!-- footer end -->
 
   <!-- feather icons -->
-
   <script>
     feather.replace();
   </script>
 
   <!-- My Javascript -->
+  <script src="js/data.js"></script>
+  <script src="js/config.js"></script>
   <script src="js/script.js"></script>
+  <script src="js/cart.js"></script>
 
 </body>
 
