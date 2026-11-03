@@ -1,175 +1,434 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kelayu Coffee</title>
+  <title>Kelayu Coffee - Kedai Kopi Spesialisasi & Suasana Hangat</title>
 
-  <!-- fonts -->
+  <!-- Google Fonts: Poppins & Playfair Display -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-
-  <!-- feather icons -->
-
+  <!-- Feather Icons -->
   <script src="https://unpkg.com/feather-icons"></script>
 
-  <!-- my style -->
-
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
-  <!-- navbar start -->
+  <!-- Navbar Start -->
   <nav class="navbar">
-    <a href="#" class="navbar-logo">Kelayu<span>Cofee.</span></a>
+    <a href="#home" class="navbar-logo">Kelayu<span>Coffee.</span></a>
 
     <div class="navbar-nav">
       <a href="#home">Home</a>
       <a href="#about">Tentang Kami</a>
       <a href="#menu">Menu</a>
+      <a href="#testimonials">Ulasan</a>
       <a href="#contact">Kontak</a>
     </div>
 
     <div class="navbar-extra">
-      <a href="#" id="search"><i data-feather="search"></i></a>
-      <a href="#" id="shopping-cart"><i data-feather="shopping-cart"></i></a>
-      <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
-
+      <button type="button" id="search-btn" class="nav-icon-btn" title="Cari Menu">
+        <i data-feather="search"></i>
+      </button>
+      <button type="button" id="shopping-cart-btn" class="nav-icon-btn" title="Keranjang Belanja">
+        <i data-feather="shopping-cart"></i>
+        <span id="cart-badge" class="cart-badge">0</span>
+      </button>
+      <button type="button" id="hamburger-menu" class="nav-icon-btn" title="Menu Navigasi">
+        <i data-feather="menu"></i>
+      </button>
     </div>
   </nav>
+  <!-- Navbar End -->
 
-  <!-- navbar end -->
+  <!-- Search Bar Overlay Start -->
+  <div class="search-bar" id="search-bar">
+    <div class="search-bar-inner">
+      <i data-feather="search" class="search-icon"></i>
+      <input type="search" id="search-input" placeholder="Cari kopi, minuman non-kopi, atau camilan..." autocomplete="off">
+      <button type="button" id="search-close" class="btn-close-search" title="Tutup">
+        <i data-feather="x"></i>
+      </button>
+    </div>
+  </div>
+  <!-- Search Bar Overlay End -->
 
-  <!-- Hero section start -->
+  <!-- Hero Section Start -->
   <section class="hero" id="home">
-    <main class="content">
-      <h1>Mari nikmati secangkir<span> Kopi</span></h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, velit.</p>
-      <a href="#" class="cta">Beli Sekarang</a>
-    </main>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Secangkir Ketenangan di Setiap <span>Tegukan.</span></h1>
+      <p>Nikmati seduhan biji kopi Nusantara pilihan dengan resep khas Kelayu. Tempat ternyaman untuk bekerja, bercerita, dan merayakan momen kecil setiap hari.</p>
+      <div class="hero-cta-group">
+        <a href="#menu" class="btn btn-primary"><i data-feather="shopping-bag"></i> Pesan Sekarang</a>
+        <a href="#about" class="btn btn-outline"><i data-feather="info"></i> Cerita Kami</a>
+      </div>
+    </div>
   </section>
-  <!-- Hero section end -->
+  <!-- Hero Section End -->
 
-  <!-- about section start -->
+  <!-- Highlights Bar Start -->
+  <section class="highlights-bar">
+    <div class="highlight-item">
+      <div class="highlight-icon"><i data-feather="check-circle"></i></div>
+      <div class="highlight-text">
+        <h4>100% Biji Asli Nusantara</h4>
+        <p>Dipetik langsung dari petani lokal</p>
+      </div>
+    </div>
+    <div class="highlight-item">
+      <div class="highlight-icon"><i data-feather="clock"></i></div>
+      <div class="highlight-text">
+        <h4>Buka Setiap Hari</h4>
+        <p>08.00 - 23.00 WITA</p>
+      </div>
+    </div>
+    <div class="highlight-item">
+      <div class="highlight-icon"><i data-feather="wifi"></i></div>
+      <div class="highlight-text">
+        <h4>High-Speed WiFi</h4>
+        <p>Suasana tenang & colokan memadai</p>
+      </div>
+    </div>
+  </section>
+  <!-- Highlights Bar End -->
+
+  <!-- About Section Start -->
   <section id="about" class="about">
-    <h2><span>Tentang</span> Kami</h2>
+    <div class="section-header">
+      <span class="section-tag">TENTANG KAMI</span>
+      <h2>Mengapa Memilih <span>Kelayu Coffee?</span></h2>
+      <p>Berawal dari kecintaan terhadap aroma kopi tanah air, kami hadir untuk menyajikan lebih dari sekadar minuman berkafein.</p>
+    </div>
 
     <div class="row">
       <div class="about-img">
-        <img src="img/tentang-kami.jpg" alt="Tentang Kami">
+        <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&q=80" alt="Suasana Kelayu Coffee" loading="lazy" onerror="this.onerror=null; this.src='img/tentang-kami.jpg';">
+        <div class="about-img-badge">
+          <span class="badge-number">4.9/5</span>
+          <span class="badge-text">Kepuasan Pelanggan</span>
+        </div>
       </div>
-      <div class="content">
-        <h3>Kenapa memilih kopi kami?</h3>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus perferendis exercitationem voluptate tempore
-          quis voluptatibus?</p>
+      <div class="about-content">
+        <h3>Ruang Hangat untuk Setiap Cerita</h3>
+        <p>Kelayu Coffee dirancang sebagai rumah kedua bagi para penikmat kopi, pekerja kreatif, dan sahabat yang berkumpul. Setiap cangkir diracik presisi oleh barista kami menggunakan biji arabika dan robusta segar.</p>
+        <p>Kombinasi tempat yang asri, alunan musik yang santai, serta aroma sangrai kopi yang khas menjadikan setiap kunjungan Anda pengalaman yang berharga.</p>
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, commodi.</p>
+        <div class="about-features">
+          <div class="feature-card">
+            <i data-feather="award"></i>
+            <div>
+              <h4>Kualitas Rasa Terjaga</h4>
+              <p>Profiling sangrai khusus demi keseimbangan rasa optimal.</p>
+            </div>
+          </div>
+          <div class="feature-card">
+            <i data-feather="heart"></i>
+            <div>
+              <h4>Pelayanan Ramah</h4>
+              <p>Barista kami siap merekomendasikan racikan sesuai selera Anda.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
-  <!-- about section end -->
+  <!-- About Section End -->
 
-  <!-- menu section start -->
+  <!-- Menu Section Start -->
   <section id="menu" class="menu">
-    <h2><span>Menu</span> Kami</h2>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum omnis expedita facilis dicta porro voluptatum.
-    </p>
-    <div class="row">
-      <div class="menu-card">
-        <img src="img/menu/1.jpg" alt="espresso" class="menu-card-img">
-        <h3 class="menu-card-title">- Espresso -</h3>
-        <p class="menu-card-price">IDR 15K</p>
-
-      </div>
-      <div class="menu-card">
-        <img src="img/menu/1.jpg" alt="espresso" class="menu-card-img">
-        <h3 class="menu-card-title">- Espresso -</h3>
-        <p class="menu-card-price">IDR 15K</p>
-
-      </div>
-      <div class="menu-card">
-        <img src="img/menu/1.jpg" alt="espresso" class="menu-card-img">
-        <h3 class="menu-card-title">- Espresso -</h3>
-        <p class="menu-card-price">IDR 15K</p>
-
-      </div>
-      <div class="menu-card">
-        <img src="img/menu/1.jpg" alt="espresso" class="menu-card-img">
-        <h3 class="menu-card-title">- Espresso -</h3>
-        <p class="menu-card-price">IDR 15K</p>
-
-      </div>
-
+    <div class="section-header">
+      <span class="section-tag">MENU PILIHAN</span>
+      <h2>Jelajahi Cita Rasa <span>Kami</span></h2>
+      <p>Dari kopi susu gula aren signature hingga camilan gurih pendamping obrolan hangat.</p>
     </div>
 
-  </section>
-  <!-- menu section end -->
+    <!-- Category Filter Tabs -->
+    <div class="category-tabs">
+      <button type="button" class="category-pill active" data-category="all">Semua Menu</button>
+      <button type="button" class="category-pill" data-category="signature">Signature</button>
+      <button type="button" class="category-pill" data-category="coffee">Classic Coffee</button>
+      <button type="button" class="category-pill" data-category="non-coffee">Non-Coffee</button>
+      <button type="button" class="category-pill" data-category="snack">Snack & Pastry</button>
+    </div>
 
-  <!-- contact section start -->
+    <!-- Menu Cards Container (Dynamic via JS) -->
+    <div class="menu-grid" id="menu-container"></div>
+  </section>
+  <!-- Menu Section End -->
+
+  <!-- Testimonials Section Start -->
+  <section id="testimonials" class="testimonials">
+    <div class="section-header">
+      <span class="section-tag">TESTIMONI</span>
+      <h2>Apa Kata <span>Pelanggan Kami?</span></h2>
+      <p>Ulasan tulus dari para penikmat kopi yang telah mampir ke Kelayu Coffee.</p>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">
+          <i data-feather="star"></i><i data-feather="star"></i><i data-feather="star"></i><i data-feather="star"></i><i data-feather="star"></i>
+        </div>
+        <p class="review-text">"Kopi Susu Kelayu racikannya pas banget! Manisnya legit aren alami tanpa ngilangin karakter kopinya. Tempatnya juga pewe buat nugas."</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">R</div>
+          <div class="reviewer-info">
+            <h4>Rian Pratama</h4>
+            <span>Software Engineer</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">
+          <i data-feather="star"></i><i data-feather="star"></i><i data-feather="star"></i><i data-feather="star"></i><i data-feather="star"></i>
+        </div>
+        <p class="review-text">"Cold brew-nya segar parah, aftertaste-nya clean. Baristanya juga asik diajak diskusi soal seduhan manual. Pasti bakal rutin balik."</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">D</div>
+          <div class="reviewer-info">
+            <h4>Dina Anggraini</h4>
+            <span>Mahasiswi & Konten Kreator</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">
+          <i data-feather="star"></i><i data-feather="star"></i><i data-feather="star"></i><i data-feather="star"></i><i data-feather="star"></i>
+        </div>
+        <p class="review-text">"Butter croissant-nya renyah garing di luar tapi lembut di dalem. Pasangan serasi bareng Americano dingin sore-sore."</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">F</div>
+          <div class="reviewer-info">
+            <h4>Fajar Maulana</h4>
+            <span>Freelance Designer</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Testimonials Section End -->
+
+  <!-- Contact Section Start -->
   <section id="contact" class="contact">
-    <h2><span>Kontak</span> Kami</h2>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel, consequuntur.</p>
+    <div class="section-header">
+      <span class="section-tag">LOKASI & HUBUNGI</span>
+      <h2>Temukan & <span>Hubungi Kami</span></h2>
+      <p>Singgah ke kedai kami atau kirimkan pesan untuk reservasi meja dan acara komunitas.</p>
+    </div>
 
-    <div class="row">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1972.171900183462!2d116.55128224442747!3d-8.658815599999992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dcc4fbb59fd7c0d%3A0xaffb865c6c58a2fc!2sSamalas%2013%20Coffee!5e0!3m2!1sid!2sid!4v1706522178041!5m2!1sid!2sid"
-        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map"></iframe>
-
-      <form action="">
-        <div class="input-group">
-          <i data-feather="user"></i>
-          <input type="text" placeholder="nama">
+    <div class="contact-wrapper">
+      <div class="contact-info-panel">
+        <div class="info-item">
+          <i data-feather="map-pin"></i>
+          <div>
+            <h4>Alamat Kedai</h4>
+            <p>Jl. Raya Kelayu, Lombok Timur, Nusa Tenggara Barat</p>
+          </div>
         </div>
-        <div class="input-group">
+        <div class="info-item">
+          <i data-feather="clock"></i>
+          <div>
+            <h4>Jam Operasional</h4>
+            <p>Senin - Minggu: 08.00 - 23.00 WITA</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <i data-feather="phone-call"></i>
+          <div>
+            <h4>Kontak WhatsApp</h4>
+            <p>+62 812-3456-7890</p>
+          </div>
+        </div>
+        <div class="info-item">
           <i data-feather="mail"></i>
-          <input type="text" placeholder="email">
+          <div>
+            <h4>Email Resmi</h4>
+            <p>halo@kelayucoffee.com</p>
+          </div>
         </div>
-        <div class="input-group">
-          <i data-feather="phone"></i>
-          <input type="text" placeholder="no hp">
 
-
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1972.171900183462!2d116.55128224442747!3d-8.658815599999992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dcc4fbb59fd7c0d%3A0xaffb865c6c58a2fc!2sSamalas%2013%20Coffee!5e0!3m2!1sid!2sid!4v1706522178041!5m2!1sid!2sid"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map" title="Peta Lokasi Kelayu Coffee"></iframe>
         </div>
-        <button type="button" class="btn">Kirim pesan</button>
+      </div>
 
-      </form>
+      <div class="contact-form-panel">
+        <h3>Kirim Pesan Langsung</h3>
+        <p>Pesan akan langsung terhubung ke WhatsApp customer service kami.</p>
+
+        <form id="contact-form">
+          <div class="form-group">
+            <label for="contact-name">Nama Lengkap</label>
+            <div class="input-with-icon">
+              <i data-feather="user"></i>
+              <input type="text" id="contact-name" placeholder="Contoh: Budi Santoso" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-email">Email (Opsional)</label>
+            <div class="input-with-icon">
+              <i data-feather="mail"></i>
+              <input type="email" id="contact-email" placeholder="budi@example.com">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-phone">Nomor WhatsApp</label>
+            <div class="input-with-icon">
+              <i data-feather="phone"></i>
+              <input type="tel" id="contact-phone" placeholder="08xxxxxxxxxx">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-msg">Pesan / Rencana Kunjungan</label>
+            <div class="input-with-icon text-area-wrap">
+              <i data-feather="message-square"></i>
+              <textarea id="contact-msg" rows="4" placeholder="Tuliskan pertanyaan, reservasi meja, atau saran..." required></textarea>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">
+            <i data-feather="send"></i> Kirim via WhatsApp
+          </button>
+        </form>
+      </div>
     </div>
   </section>
-  <!-- contact section end-->
+  <!-- Contact Section End -->
 
-  <!-- footer start -->
+  <!-- Footer Start -->
   <footer>
-    <div class="sosial">
-      <a href="https://www.instagram.com/taufikhidayatt.__/"><i data-feather="instagram"></i></a>
-      <a href="#"><i data-feather="facebook"></i></a>
-      <a href="#"><i data-feather="twitter"></i></a>
+    <div class="footer-container">
+      <div class="footer-col">
+        <a href="#home" class="footer-logo">Kelayu<span>Coffee.</span></a>
+        <p>Ruang seduh kopi pilihan di Kelayu, menyajikan racikan istimewa dari biji kopi lokal terbaik untuk menyempurnakan hari Anda.</p>
+        <div class="social-links">
+          <a href="https://www.instagram.com/taufikhidayatt.__/" target="_blank" rel="noopener" title="Instagram"><i data-feather="instagram"></i></a>
+          <a href="#" title="Facebook"><i data-feather="facebook"></i></a>
+          <a href="#" title="Twitter"><i data-feather="twitter"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigasi</h4>
+        <ul class="footer-nav">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">Tentang Kami</a></li>
+          <li><a href="#menu">Daftar Menu</a></li>
+          <li><a href="#testimonials">Ulasan</a></li>
+          <li><a href="#contact">Kontak & Lokasi</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Jam Buka</h4>
+        <p class="hours-text"><strong>Senin - Jumat:</strong> 08.00 - 23.00 WITA</p>
+        <p class="hours-text"><strong>Sabtu - Minggu:</strong> 08.00 - 00.00 WITA</p>
+        <div class="status-indicator">
+          <span class="status-dot"></span> Buka Sekarang
+        </div>
+      </div>
     </div>
-    <div class="links">
-      <a href="#home">Home</a>
-      <a href="#about">Tentang kami</a>
-      <a href="#menu">Menu</a>
-      <a href="#contact">Kontak</a>
-    </div>
-    <div class="credit">
-      <p>Created by <a href="">taufikhidayat</a>. | &copy; 2024.</p>
+
+    <div class="footer-bottom">
+      <p>&copy; 2024 - 2025 <strong>Kelayu Coffee</strong>. Dibuat dengan dedikasi oleh <a href="https://www.instagram.com/taufikhidayatt.__/" target="_blank" rel="noopener">taufikhidayat</a>.</p>
     </div>
   </footer>
-  <!-- footer end -->
+  <!-- Footer End -->
 
-  <!-- feather icons -->
+  <!-- Cart Drawer Start -->
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-drawer-header">
+      <div class="cart-drawer-title">
+        <i data-feather="shopping-bag"></i>
+        <h3>Keranjang Pesanan</h3>
+      </div>
+      <button type="button" id="cart-close" class="btn-close-drawer" title="Tutup Keranjang">
+        <i data-feather="x"></i>
+      </button>
+    </div>
 
-  <script>
-    feather.replace();
-  </script>
+    <div class="cart-drawer-body">
+      <!-- Empty State -->
+      <div class="cart-empty-state" id="cart-empty-state">
+        <i data-feather="shopping-cart"></i>
+        <h4>Keranjang Masih Kosong</h4>
+        <p>Pilih menu favorit Anda dan tambahkan ke sini untuk memulai pesanan.</p>
+        <a href="#menu" class="btn btn-outline btn-sm" onclick="document.querySelector('#cart-drawer').classList.remove('active')">Lihat Menu</a>
+      </div>
 
-  <!-- My Javascript -->
+      <!-- Items List -->
+      <div class="cart-items-list" id="cart-items-list"></div>
+    </div>
+
+    <!-- Cart Footer & Checkout Form -->
+    <div class="cart-drawer-footer" id="cart-footer">
+      <div class="cart-summary-row">
+        <span>Total Pembayaran:</span>
+        <strong id="cart-total-price">Rp 0</strong>
+      </div>
+
+      <form id="checkout-form" class="checkout-form">
+        <div class="form-group-sm">
+          <label for="order-name">Nama Pemesan</label>
+          <input type="text" id="order-name" placeholder="Nama Anda" required>
+        </div>
+
+        <div class="form-group-sm">
+          <label for="order-type">Tipe Pesanan</label>
+          <select id="order-type">
+            <option value="Dine-in (Makan di Tempat)">Dine-in (Makan di Tempat)</option>
+            <option value="Takeaway (Bungkus)">Takeaway (Bungkus)</option>
+            <option value="Delivery (Antar)">Delivery (Antar)</option>
+          </select>
+        </div>
+
+        <div class="form-group-sm">
+          <label for="order-note">No. Meja / Catatan</label>
+          <input type="text" id="order-note" placeholder="Contoh: Meja 4 / Less Sugar">
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">
+          <i data-feather="message-circle"></i> Pesan via WhatsApp
+        </button>
+      </form>
+    </div>
+  </div>
+  <!-- Cart Drawer End -->
+
+  <!-- Product Quick View Modal Start -->
+  <div class="product-modal" id="product-modal">
+    <div class="modal-card">
+      <button type="button" id="modal-close" class="btn-close-modal" title="Tutup">
+        <i data-feather="x"></i>
+      </button>
+      <div id="modal-product-content"></div>
+    </div>
+  </div>
+  <!-- Product Quick View Modal End -->
+
+  <!-- Toast Notification Start -->
+  <div class="toast-notification" id="toast-notification">
+    <i data-feather="check-circle" class="toast-icon"></i>
+    <span class="toast-text">Item berhasil ditambahkan!</span>
+  </div>
+  <!-- Toast Notification End -->
+
+  <!-- Scripts -->
   <script src="js/script.js"></script>
-
 </body>
 
 </html>
